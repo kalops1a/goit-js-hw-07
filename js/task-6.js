@@ -9,26 +9,24 @@ function destroyBoxes() {
     boxesContainer.innerHTML = ``;
   }
 
-  const amount = parseInt(document.querySelector(`input`).value);
+  
 function createBoxes(amount) {
-  boxesContainer.innerHTML = ``; 
+  boxesContainer.innerHTML = ``;
    
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement(`div.box`);
+    const box = document.createElement(`div`);
     box.style.width = `${30 + (i * 10)}px`;
     box.style.height = `${30 + (i * 10)}px`;
     box.style.backgroundColor = getRandomHexColor();
     boxesContainer.appendChild(box);
   }
-  
+}
   
   document.querySelector(`button[data-action ="destroy"]`).addEventListener(`click`, destroyBoxes);
   document.querySelector(`button[data-action ="create"]`).addEventListener(`click`, () => {
-    
+    const amount = parseInt(document.querySelector(`input`).value);
     if (amount >= 1 && amount <= 100) {
       createBoxes(amount)
       
     };
-    document.querySelector(`input`).value = ``;
   })
-}
