@@ -20,5 +20,5 @@ loginForm.addEventListener(`submit`, (event) => {
 
 
     console.log(formDataObject);
-    this.reset();
+    loginForm.reset();
 })
